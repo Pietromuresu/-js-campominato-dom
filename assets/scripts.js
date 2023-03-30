@@ -3,7 +3,9 @@ const grid = document.getElementById('grid');
 const gridContainer = document.querySelector('.container-grid ')
 const generate = document.querySelector('.button-genera');
 const levels = document.getElementById('levels');
-
+let levelValue = levels.value;
+const bombs = [];
+const NUM_BOMBS =16;
 
 generate.addEventListener('click', function(){
   generate.classList.add('hide');
@@ -15,10 +17,15 @@ generate.addEventListener('click', function(){
   grid.appendChild(newDiv);
   newDiv.classList.add('square');
   newDiv.idElem = i ;
+  
+
   newDiv.addEventListener('click', function(){
-    newDiv.classList.add('clicked');
+  newDiv.classList.add('clicked');
     
-    console.log(newDiv.idElem);
+  
+    if (bombs.includes(newDiv.idElem)){
+      console.log('hai perso');
+    }
     })
 
   if (levels.value === '100'){
@@ -30,7 +37,28 @@ generate.addEventListener('click', function(){
   }
   }
   
+ 
+ generate.addEventListener('click', generateBombs(levels.value, NUM_BOMBS));
 })
+console.log(bombs) ;
 
 
+
+// functions
+function generateBombs(max, min){
+  for(let i = 0; bombs.length < min; i++){
+    
+    const bomb = Math.floor(Math.random() * (max - min + 1) + min);
+    if (!bombs.includes(bomb)){
+       bombs.push(bomb);
+    }else {
+      
+    }
+
+    
+   
+  }
+  
+  
+}
 

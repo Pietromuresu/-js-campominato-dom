@@ -10,6 +10,11 @@ La partita termina quando il giocatore clicca su una bomba o quando raggiunge il
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
 
 
+## Steps 
+- generare 16 bombe - 
+- posizionare le bombe randomicamente nelle celle 
+
+
 **BONUS:**
 
 Aggiungere una `select` accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
