@@ -10,6 +10,7 @@ const arrSquare = [];
 const retry = document.querySelector(".retry")
 
 
+
 let points = 0;
 let levelValue = levels.value;
 
@@ -32,14 +33,19 @@ generate.addEventListener('click', function(){
 
   newDiv.addEventListener('click', function(){
   newDiv.classList.add('clicked');
+  newDiv.classList.add('newDiv');
   
   
   // win or lose
     if (bombs.includes(newDiv.idElem)){
       console.log('hai perso');
       newDiv.classList.add('bomb');
+      newDiv.innerHTML = `
+      <span ><i class="fa-solid fa-bomb"></i></span>
+      `;
       endGame.classList.add('showEnd');
-      endGame.innerHTML = `<h1 class="lose"> HAI PERSO! HAI TOTALIZZATO ${points} PUNTI </h1>  `
+      endGame.innerHTML = `<h1 class="lose"> HAI PERSO! HAI TOTALIZZATO ${points} PUNTI </h1>  `;
+      
     }else{
       points++;
     }
@@ -47,9 +53,11 @@ generate.addEventListener('click', function(){
           console.log('hai vinto');
           endGame.classList.add('showEnd');
           endGame.innerHTML = `<h1 class="win" > HAI VINTO! HAI SCHIVATO TUTTE LE BOMBE!!! </h1>  `
-
+          
         }
     })
+
+    
     
     // reset button
     retry.addEventListener('click', function(){

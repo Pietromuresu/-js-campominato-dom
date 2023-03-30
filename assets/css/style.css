@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  font-family: 'Teko', sans-serif;
   height: 100vh;
 }
 
@@ -44,6 +44,7 @@ body {
   border-radius: 20px;
   margin-left: 20px;
   padding: 5px;
+  text-align: center;
 }
 
 
@@ -63,8 +64,6 @@ box-shadow: 0 0 5px ;
 .square {
   position: relative;
   background-color: rgba(0, 0, 0, 0.679);
-  height: calc(100% / 10);
-  width: calc(100% / 10);
   border: 1px solid white;
   border-radius: 5px;
 }
@@ -79,8 +78,9 @@ box-shadow: 0 0 5px ;
 .levelTwo {
   height: calc(100% / 9);
   width: calc(100% / 9);
-
 }
+
+
 .levelThree {
   height: calc(100% / 7);
   width: calc(100% / 7);
@@ -109,12 +109,16 @@ box-shadow: 0 0 5px ;
 
 
 .lose {
+  margin-left: 10%;
+  width: 80%;
   border-radius: 10px;
   background-color: red;
   color: aliceblue;
 } 
 
 .win {
+  margin-left: 10%;
+  width: 80%;
   border-radius: 10px;
   background-color: rgb(0, 255, 115);
   color: aliceblue;
@@ -135,8 +139,20 @@ box-shadow: 0 0 5px ;
 
 .bomb {
   background-color: red;
+  
 }
 
+.newDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  font-size: 40px;
+}
+
+.newDiv span {
+  margin-top: 10px;
+}
 
 /* reset button */
 .retry {
@@ -149,4 +165,5 @@ box-shadow: 0 0 5px ;
   border-radius: 20px;
   background-color: #130d0d;
   color: white;
+  font-size: small;
 }
