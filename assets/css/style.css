@@ -16,7 +16,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
   height: 100vh;
+}
+
+
+.clicked {
+  background-color: #387279;
+  z-index: -1;
 }
 
 /* landing page */
@@ -48,7 +55,9 @@ body {
 
 /* grid */
 
+
 .grid {
+  
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -67,6 +76,7 @@ box-shadow: 0 0 5px ;
 }
 
 
+/* levels */
 
 .levelOne {
   height: calc(100% / 10);
@@ -83,12 +93,8 @@ box-shadow: 0 0 5px ;
 
 }
 
-.clicked {
-  background-color: #387279;
-  z-index: -1;
-}
 
-
+/* end game */
 .endGame {
   position: absolute;
   display: none;
@@ -122,10 +128,26 @@ box-shadow: 0 0 5px ;
   background: red;
 }
 
+
+
 .showEnd {
   display:inline-flex;
 }
 
 .bomb {
   background-color: red;
+}
+
+
+/* reset button */
+.retry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #130d0d;
+  color: white;
 }

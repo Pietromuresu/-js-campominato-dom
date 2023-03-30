@@ -1,36 +1,43 @@
 
 const grid = document.getElementById('grid');
-const gridContainer = document.querySelector('.container-grid ')
+const gridContainer = document.querySelector('.container-grid');
 const generate = document.querySelector('.button-genera');
 const levels = document.getElementById('levels');
-let levelValue = levels.value;
 const bombs = [];
 const NUM_BOMBS = 16;
-let points = 0;
 const endGame = document.querySelector('.endGame');
 const arrSquare = [];
-console.log(arrSquare);
- 
+const retry = document.querySelector(".retry")
+
+
+let points = 0;
+let levelValue = levels.value;
+
+
+// generate buttton
 generate.addEventListener('click', function(){
+  
   generate.classList.add('hide');
   gridContainer.classList.remove('hide');
   levels.classList.add('hide');
   
+  // generate squares
   for (let i = 1; i <= levels.value; i++){
   const newDiv = document.createElement("div");
   grid.appendChild(newDiv);
   arrSquare.push("newDiv.idElem ");
   newDiv.classList.add('square');
   newDiv.idElem = i ;
-  
+ 
 
   newDiv.addEventListener('click', function(){
   newDiv.classList.add('clicked');
+
+// generate bombs
+ generate.addEventListener('click', generateBombs(levels.value, NUM_BOMBS));
   
-  
-  
+  // win or lose
     if (bombs.includes(newDiv.idElem)){
-      console.log('hai perso');
       newDiv.classList.add('bomb');
       endGame.classList.add('showEnd');
       endGame.innerHTML = `<h1 class="lose"> HAI PERSO! HAI TOTALIZZATO ${points} PUNTI </h1>  `
@@ -38,16 +45,24 @@ generate.addEventListener('click', function(){
       points++;
     }
     if (points === (arrSquare.length - bombs.length)){
-          console.log('hai vinto');
           endGame.classList.add('showEnd');
           endGame.innerHTML = `<h1 class="win" > HAI VINTO! HAI SCHIVATO TUTTE LE BOMBE!!! </h1>  `
 
         }
     })
     
+    // reset button
+    retry.addEventListener('click', function(){
+      grid.removeChild(newDiv)
+      gridContainer.classList.add('hide');
+      generate.classList.remove('hide');
+      levels.classList.remove('hide');
+      endGame.classList.remove('showEnd')
+      points = 0;
+    })
     
   
-
+// levels
   if (levels.value === '100'){
   newDiv.classList.add('levelOne');
   }else if (levels.value === '81'){
@@ -57,9 +72,10 @@ generate.addEventListener('click', function(){
   }
   }
   
- generate.addEventListener('click', generateBombs(levels.value, NUM_BOMBS));
+
 })
-console.log(bombs) ;
+
+
 
 
 
@@ -80,4 +96,6 @@ function generateBombs(max, min){
   
   
 }
+
+
 
