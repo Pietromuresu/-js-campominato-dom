@@ -32,12 +32,11 @@ generate.addEventListener('click', function(){
 
   newDiv.addEventListener('click', function(){
   newDiv.classList.add('clicked');
-
-// generate bombs
- generate.addEventListener('click', generateBombs(levels.value, NUM_BOMBS));
+  
   
   // win or lose
     if (bombs.includes(newDiv.idElem)){
+      console.log('hai perso');
       newDiv.classList.add('bomb');
       endGame.classList.add('showEnd');
       endGame.innerHTML = `<h1 class="lose"> HAI PERSO! HAI TOTALIZZATO ${points} PUNTI </h1>  `
@@ -45,6 +44,7 @@ generate.addEventListener('click', function(){
       points++;
     }
     if (points === (arrSquare.length - bombs.length)){
+          console.log('hai vinto');
           endGame.classList.add('showEnd');
           endGame.innerHTML = `<h1 class="win" > HAI VINTO! HAI SCHIVATO TUTTE LE BOMBE!!! </h1>  `
 
@@ -72,9 +72,10 @@ generate.addEventListener('click', function(){
   }
   }
   
-
+  // generate bombs
+ generate.addEventListener('click', generateBombs(levels.value, NUM_BOMBS));
 })
-
+console.log(bombs) ;
 
 
 
@@ -98,4 +99,9 @@ function generateBombs(max, min){
 }
 
 
+function reset(grid, button, select){
+  grid.classList.add('hide');
+  button.classList.remove('hide');
+  select.classList.remove('hide');
+}
 

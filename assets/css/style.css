@@ -20,12 +20,6 @@ body {
   height: 100vh;
 }
 
-
-.clicked {
-  background-color: #387279;
-  z-index: -1;
-}
-
 /* landing page */
 
 .button-genera{
@@ -91,6 +85,11 @@ box-shadow: 0 0 5px ;
   height: calc(100% / 7);
   width: calc(100% / 7);
 
+}
+
+.clicked {
+  background-color: #387279;
+  z-index: -1;
 }
 
 
