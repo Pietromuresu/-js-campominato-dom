@@ -1,0 +1,84 @@
+
+
+
+/* general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* landing page */
+
+.button-genera{
+ background-color: #130d0d;
+ color: azure;
+ align-items: center;
+ height: 60px;
+ border-radius: 50px;
+ padding: 10px 20px;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+.buttons-container select {
+  background-color: #130d0d;
+  color: azure;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+
+/* grid */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 600px;
+box-shadow: 0 0 5px ;
+}
+
+.square {
+  background-color: rgba(0, 0, 0, 0.679);
+  height: calc(100% / 10);
+  width: calc(100% / 10);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.levelOne {
+  height: calc(100% / 10);
+  width: calc(100% / 10);
+}
+.levelTwo {
+  height: calc(100% / 9);
+  width: calc(100% / 9);
+
+}
+.levelThree {
+  height: calc(100% / 7);
+  width: calc(100% / 7);
+
+}
+
+.clicked {
+  background-color: #387279;
+}
