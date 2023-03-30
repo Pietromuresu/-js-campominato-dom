@@ -6,7 +6,10 @@ const levels = document.getElementById('levels');
 let levelValue = levels.value;
 const bombs = [];
 const NUM_BOMBS =16;
+let points = 0;
+const endGame = document.querySelector('.endGame');
 
+ 
 generate.addEventListener('click', function(){
   generate.classList.add('hide');
   gridContainer.classList.remove('hide');
@@ -25,8 +28,13 @@ generate.addEventListener('click', function(){
   
     if (bombs.includes(newDiv.idElem)){
       console.log('hai perso');
+      endGame.classList.add('showEnd');
+      endGame.innerHTML = `<h1> HAI PERSO! HAI TOTALIZZATO ${points} PUNTI </h1>  `
+    }else{
+      points++;
     }
     })
+    console.log(points);
 
   if (levels.value === '100'){
   newDiv.classList.add('levelOne');
@@ -37,7 +45,6 @@ generate.addEventListener('click', function(){
   }
   }
   
- 
  generate.addEventListener('click', generateBombs(levels.value, NUM_BOMBS));
 })
 console.log(bombs) ;

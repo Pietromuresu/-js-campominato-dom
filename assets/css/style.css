@@ -49,6 +49,7 @@ body {
 /* grid */
 
 .grid {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   height: 600px;
@@ -81,4 +82,28 @@ box-shadow: 0 0 5px ;
 
 .clicked {
   background-color: #387279;
+}
+
+
+.endGame {
+  position: absolute;
+  display: none;
+  text-align: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  
+}
+
+.endGame h1 {
+  border-radius: 50px;
+  color: aliceblue;
+  background: red;
+}
+
+.showEnd {
+  display:inline-flex;
 }
